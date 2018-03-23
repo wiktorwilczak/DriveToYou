@@ -76,7 +76,6 @@ namespace DriveToYou.Services
             var querycwj = _db.Tracks.Where(o => o.Date.Month == DateTime.Now.Month && o.Date.Year == DateTime.Now.Year)
                 .GroupBy(u => u.Date.Day).ToList();
 
-            int quest;
 
             var query = from days in _db.Tracks
                         where (days.Date.Month == DateTime.Now.Month && days.Date.Year == DateTime.Now.Year)
