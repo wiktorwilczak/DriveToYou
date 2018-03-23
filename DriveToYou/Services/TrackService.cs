@@ -74,8 +74,8 @@ namespace DriveToYou.Services
         public IEnumerable <List<MonthlyReportDTO>> GetMonthlyReport()
         {
 
-            //var querycwj = _db.Tracks.Where(o => o.Date.Month == DateTime.Now.Month && o.Date.Year == DateTime.Now.Year)
-            //    .GroupBy(u => u.Date.Day).ToList();
+            var querycwj = _db.Tracks.Where(o => o.Date.Month == DateTime.Now.Month && o.Date.Year == DateTime.Now.Year)
+                .GroupBy(u => u.Date.Day).ToList();
 
 
             var query = from days in _db.Tracks
