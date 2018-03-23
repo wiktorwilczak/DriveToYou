@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- saved from url=(0025)https://notehub.org/9pk10 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NoteHub — Wprowadzenie</title>
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script async="" src="https://www.google-analytics.com/analytics.js"></script><script src="./NoteHub — Wprowadzenie_files/cNMhBupGZkNx_J3bPzAgXe1nMwU.js.pobrane"></script><link href="./NoteHub — Wprowadzenie_files/style.css" rel="stylesheet" type="text/css">
+<script src="./NoteHub — Wprowadzenie_files/note.js.pobrane"></script>
+<style></style></head>
+<body>
+<article>
+<h3>Wprowadzenie</h3>
+<p>Jesteś kierowcą ciężarówki. Codziennie wozisz świeże bułki, wędliny itd. Za każdy przejazd otrzymujesz zapłatę.
+Chcesz napisać aplikację, która pomoże ci śledzić twoje przejazdy, ilość przejechanych kilometrów i zarobionych pieniędzy.</p>
+<h2>Zadanie</h2>
+<ol>
+<li>Stwórz API zgodnie z załączoną dokumentacją,</li>
+<li>API może zostać stworzone z użyciem dowolnej technologii,</li>
+<li>Użyj Gita do udokumentowania historii projektu,</li>
+<li>Logowanie nie jest wymagane</li>
+</ol>
+<h1>Dokumentacja</h1>
+<h3>Transit</h3>
+<p>Endpoint do dodawania przejazdu. Odległość między adresem początkowym a końcowym przeliczana jest automatycznie.</p>
+<p><strong>HTTP REQUEST</strong> <code>POST http://example.com/transits</code></p>
+<p><strong>Parametry zapytania:</strong></p>
+<pre><code>{
+  "source_address":         "ul. Zakręt 8, Poznań",
+  "destination_address": "Złota 44, Warszawa",
+  "price":                          450,
+  "date":                          "2018-03-15"
+}
+</code></pre>
+<hr>
+<h3>Get daily report</h3>
+<p>Endpoint zwraca ilość przejechanych kilometrów oraz zarobionych pieniędzy pomiędzy dwoma datami.</p>
+<p><strong>HTTP REQUEST</strong> <code>GET http://example.com/reports/daily?start_date=YYYY-MM-DD&amp;end_date=YYYY-MM_DD</code></p>
+<p><strong>Parametry zapytania:</strong></p>
+<pre><code>{
+  "start_date": "2018-01-20",
+  "end_date":  "2018-01-25"
+}
+</code></pre>
+<p><strong>Parametry odpowiedzi (JSON):</strong></p>
+<pre><code>{
+  "total_distance": "90km",
+  "total_price":      "115PLN"
+}
+</code></pre>
+<h3>Get monthly report</h3>
+<p>Endpoint zwraca ilość przejechanych kilometrów, średni dystans przejazdu oraz średnią zapłatę za przejazd dla każdego dnia w obecnym miesiącu (np. dla daty 5 marca zwraca dni 1-4 marca).</p>
+<p><strong>HTTP REQUEST</strong> <code>GET http://example.com/reports/monthly</code></p>
+<p><strong>Parametry odpowiedzi:</strong></p>
+<pre><code>[
+  {
+    "date":                "March, 1st",
+    "total_distance": "240km",
+    "avg_distance":   "70km",
+    "avg_price":        "213.7PLN"
+  },
+  {
+    "date":                "March, 2nd",
+    "total_distance": "76km",
+    "avg_distance":   "76km",
+    "avg_price":        "90.3PLN"
+  },
+  &lt;...&gt;
+]
+</code></pre>
+<h3>Dodatkowe punkty za:</h3>
+<ul>
+<li>asynchroniczne obliczanie odległości pomiędzy dwoma punktami</li>
+</ul>
+</article>
+<footer>
+<a href="https://notehub.org/">⌂ notehub</a> ·
+<a href="https://notehub.org/9pk10/stats">stats</a> ·
+<a href="https://notehub.org/9pk10/edit">edit</a> ·
+<a href="https://notehub.org/9pk10/export">export</a> ·
+<a href="javascript:void(0)" onclick="report(&quot;9pk10&quot;)">report abuse</a> ·
+<a href="https://notehub.org/TOS.md">tos</a>
+</footer>
+
+
+</body></html>
