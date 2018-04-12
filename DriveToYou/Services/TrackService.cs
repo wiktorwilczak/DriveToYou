@@ -35,7 +35,7 @@ namespace DriveToYou.Services
             string diststring = stuff.rows[0].elements[0].distance.text;
 
             var distance = double.Parse(diststring.Replace("km", "").Replace(" ", "").Replace(".", ","));
-            //konwertowanie
+         
 
             track.Distance = distance;
             _db.Tracks.Add(track);
@@ -101,8 +101,7 @@ namespace DriveToYou.Services
                 tempList.Date = Date;
                 tempList.TotalDailyDistance = TotalDailyDistance;
                 tempList.AveragePrice = AveragePrice;
-                tempList.AverageDistance = AverageDistance;
-                
+                tempList.AverageDistance = AverageDistance;                
                 finalList.Add(tempList);
                 tempList = new MonthlyReportDTO();
 
