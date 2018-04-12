@@ -32,10 +32,12 @@ namespace DriveToYou.Services
 
 
             dynamic stuff = JsonConvert.DeserializeObject(response.Content);
-            string dist = stuff.rows[0].elements[0].distance.text;
+            string diststring = stuff.rows[0].elements[0].distance.text;
+
+            var distance = double.Parse(diststring.Replace("km", "").Replace(" ", "").Replace(".", ","));
             //konwertowanie
-            
-            track.Distance = dist;
+
+            track.Distance = distance;
             _db.Tracks.Add(track);
             _db.SaveChanges();
         }
@@ -71,28 +73,14 @@ namespace DriveToYou.Services
             return result;
         }
 
-        public IEnumerable <List<MonthlyReportDTO>> GetMonthlyReport()
-        {
+        public List<MonthlyReportDTO> GetMonthlyReport()
+        {          
 
-            var querycwj = _db.Tracks.Where(o => o.Date.Month == DateTime.Now.Month && o.Date.Year == DateTime.Now.Year)
-                .GroupBy(u => u.Date.Day).ToList();
+            var query = _db.Tracks.Where(o => o.Date.Month == DateTime.Now.Month && o.Date.Year == DateTime.Now.Year)
+               .ToList();        
 
-
-            var query = from days in _db.Tracks
-                        where (days.Date.Month == DateTime.Now.Month && days.Date.Year == DateTime.Now.Year)
-                        select days;
-
-            var querylist = new List<Track>();
-
-            foreach (var item in query)
-            {
-                querylist.Add(item);
-            }
-
-            var dataDTO = Mapper.Map<List<MonthlyReportDTO>>(querylist);
+            var dataDTO = Mapper.Map<List<MonthlyReportDTO>>(query);
          
-
-
             var groupedList = dataDTO
                   .GroupBy(u => u.Date.Day)
                   .Select(grp => grp.ToList())
@@ -107,16 +95,21 @@ namespace DriveToYou.Services
                 var TotalDailyDistance = groupedList[i].Sum(o => o.TotalDailyDistance);
                 var AveragePrice = groupedList[i].Average(o => o.AveragePrice);
                 var AverageDistance = groupedList[i].Average(o => o.AverageDistance);
+                var Date = groupedList[i][0].Date;
+            
 
+                tempList.Date = Date;
                 tempList.TotalDailyDistance = TotalDailyDistance;
                 tempList.AveragePrice = AveragePrice;
-                tempList.AverageDistance = AverageDistance;                              
-            
+                tempList.AverageDistance = AverageDistance;
+                
                 finalList.Add(tempList);
-                yield return finalList;
-                finalList.Clear();                
+                tempList = new MonthlyReportDTO();
+
+
             }
-       
+            return finalList;
+
         }
 
 

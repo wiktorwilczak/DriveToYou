@@ -8,8 +8,8 @@ namespace DriveToYou.DTO
 {
     public class DailyReportDTO
     {
-        public decimal TotalDistance { get; set; }
-        public decimal TotalPrice { get; set; }
+        public double TotalDistance { get; set; }
+        public double TotalPrice { get; set; }
         public int DrivesCount { get; set; }
     }
 }

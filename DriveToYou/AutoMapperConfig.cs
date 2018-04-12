@@ -19,13 +19,13 @@ namespace DriveToYou
                 config.CreateMap<Track, DailyReportDTO>()
 
                .ForMember(dest => dest.TotalPrice, opt => opt.MapFrom(src => (src.Price)))
-               .ForMember(dest => dest.TotalDistance, opt => opt.MapFrom(src => (src.Distance.RemovingKmSuffix())));
+               .ForMember(dest => dest.TotalDistance, opt => opt.MapFrom(src => (src.Distance)));
                              
 
                 config.CreateMap<Track, MonthlyReportDTO>()
                 .ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.Date))
-                .ForMember(dest => dest.TotalDailyDistance, opt => opt.MapFrom(src => src.Distance.RemovingKmSuffix()))
-                .ForMember(dest => dest.AverageDistance, opt => opt.MapFrom(src => src.Distance.RemovingKmSuffix()))
+                .ForMember(dest => dest.TotalDailyDistance, opt => opt.MapFrom(src => src.Distance))
+                .ForMember(dest => dest.AverageDistance, opt => opt.MapFrom(src => src.Distance))
                 .ForMember(dest => dest.AveragePrice, opt => opt.MapFrom(src => src.Price));
                 
             });

@@ -15,6 +15,6 @@ namespace DriveToYou.Models
         public string Destination_address { get; set; }
         public decimal Price { get; set; }
         public DateTime Date { get; set; }
-        public string Distance { get; set; }
+        public double Distance { get; set; }
     }
 }
