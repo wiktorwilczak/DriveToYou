@@ -1,0 +1,53 @@
+<div class="container">
+    <div>
+        <h2>Add a new track:</h2>
+
+        <!-- <form name="trackForm" method="POST" ng-submit="submitForm()">    
+          <input type="text" name="Source_address" placeholder="Source Adress" ng-model="track.Source_address" required>
+          <br>
+          <input type="text" name="Destination_address" ng-model="track.Destination_address" placeholder="Destination Adress" required>
+          <br>
+          <input type="text" name="Price" ng-model="track.Price" placeholder="Price" required>
+          <br>
+          <input type="date" name="Date" ng-model="track.Date" required>
+          <br>
+          <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-inverse btn-primary" />
+            <input type="button" value="Reset" class="btn btn-info" 
+                   ng-disabled="trackForm.$pristine" ng-click="reset()" />
+          </div>
+          <br>
+        </form> -->
+      </div>
+      <form name="trackForm" novalidate role="form" ng-submit="trackForm.$valid && submitForm()">
+        <div class="form-group">
+          <input type="text" ng-model="track.Source_address" required="" name="tSource" placeholder="Source Address" class="form-control"  />
+          <div ng-show="trackForm.$submitted || form.tSource.$touched">
+            <div ng-show="trackForm.tSource.$error.required">Tell me Source Address.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="text" ng-model="track.Destination_address" required="" name="tDestination" placeholder="Destination Address" class="form-control" />
+          <div ng-show="trackForm.$submitted || form.tDestination.$touched">
+            <div ng-show="trackForm.tDestination.$error.required">Tell me Destination Address.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="text" ng-model="track.Price" name="tPrice" placeholder="Price" class="form-control" />        
+        </div>
+
+        <div class="form-group">
+          <input type="date" ng-model="track.Date" required="" name="tDate" placeholder="Date" class="form-control" />
+          <div ng-show="trackForm.$submitted || form.tDate.$touched">
+            <div ng-show="trackForm.tDate.$error.required">Tell me Date.</div>
+          </div>
+        </div>
+
+          <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-inverse btn-primary" />
+            <input type="button" value="Reset" class="btn btn-info" 
+               ng-disabled="trackForm.$pristine" ng-click="reset()" />
+          </div>
+    

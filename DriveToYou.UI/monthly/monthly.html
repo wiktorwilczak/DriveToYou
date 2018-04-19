@@ -1,0 +1,79 @@
+<div class="container">
+	<div>
+		<h2>Select a month to check report:</h2>
+		<div>
+			<select id='gMonth2' ng-model="monthNumber">
+			<option value=''>--Select Month--</option>
+			<option value='1'>Janaury</option>
+			<option value='2'>February</option>
+			<option value='3'>March</option>
+			<option value='4'>April</option>
+			<option value='5'>May</option>
+			<option value='6'>June</option>
+			<option value='7'>July</option>
+			<option value='8'>August</option>
+			<option value='9'>September</option>
+			<option value='10'>October</option>
+			<option value='11'>November</option>
+			<option value='12'>December</option>
+			</select> 
+			</div>
+	</div>
+
+
+ <!-- <input  type="text" name="date" ng-model="monthNumber" >     -->    
+
+		<form ng-submit="monthly()">
+		<input type="submit" class="btn btn-primary" value="Check">
+		  <table class="table" ng-show="monthlylist">
+			<thead>
+			  <tr>
+				<th>Day of the month</th>
+				<th>Total Daily Distance</th>
+				<th>Average Distance</th>
+				<th>Average Price</th>
+				<th>Drives count</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr ng-repeat="o in monthlylist">
+				<td> {{o.ShortDate}}</td>
+				<td>{{o.TotalDailyDistance}}</td>
+				<td> {{o.AverageDistance}}</td>
+				 <td> {{o.AveragePrice}}</td>
+				 <td>{{o.DrivesCount}}</td>
+			  </tr>
+			</tbody>
+		  </table>
+		</form>
+	  </div>
+</div>
+
+<div class="container">
+<h2>Check your earnings and totally driven distance beetween dates:</h2>
+<form ng-submit="earning()">
+
+		<input type="datepicker" id="from" />
+		<input type="datepicker" id="to" />
+		<br />
+		<input type="submit" value="Submit" class="btn btn-primary" />
+		<br />
+		<table class="table" ng-show="total">
+			<thead>
+				<tr>
+					<th>Total Distance</th>
+					<th>Total Earning</th>
+					<th>Drives Count</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td> {{total.TotalDistance}}</td>
+					<td>{{total.TotalPrice}}</td>
+					<td> {{total.DrivesCount}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</form>
+</div>
