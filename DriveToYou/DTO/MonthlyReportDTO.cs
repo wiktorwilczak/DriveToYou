@@ -12,5 +12,8 @@ namespace DriveToYou.DTO
         public decimal TotalDailyDistance { get; set; }
         public decimal AverageDistance { get; set; }
         public decimal AveragePrice { get; set; }
+        public int DrivesCount { get; set; }
+        public int ShortDate { get; set; }
+
     }
 }

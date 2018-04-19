@@ -12,6 +12,6 @@ namespace DriveToYou.Interfaces
     {
         void AddTrack(Track track);
         DailyReportDTO GetDailyReport(DateTime startdate, DateTime enddate);
-        List<MonthlyReportDTO> GetMonthlyReport();
+        List<MonthlyReportDTO> GetMonthlyReport(int monthNumber);
     }
 }

@@ -45,10 +45,10 @@ namespace DriveToYou.Controllers
         }
 
         [System.Web.Http.HttpGet]
-        [System.Web.Http.Route("reports/monthly")]
-        public IHttpActionResult GetMonthlyReport()
+        [System.Web.Http.Route("reports/monthly/{monthNumber}")]
+        public IHttpActionResult GetMonthlyReport(int monthNumber)
         {
-            return Ok(_trackService.GetMonthlyReport());
+            return Ok(_trackService.GetMonthlyReport(monthNumber));
 
         }
 

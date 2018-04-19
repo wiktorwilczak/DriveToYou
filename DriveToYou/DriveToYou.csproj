@@ -269,13 +269,14 @@
     <Compile Include="DriveToYouContext.cs" />
     <Compile Include="DTO\DailyReportDTO.cs" />
     <Compile Include="DTO\MonthlyReportDTO.cs" />
+    <Compile Include="ExtensionMethods.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\ITrackService.cs" />
-    <Compile Include="Migrations\201804120937431_Initial.cs" />
-    <Compile Include="Migrations\201804120937431_Initial.Designer.cs">
-      <DependentUpon>201804120937431_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201804191232391_Initial.cs" />
+    <Compile Include="Migrations\201804191232391_Initial.Designer.cs">
+      <DependentUpon>201804191232391_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Track.cs" />
@@ -319,8 +320,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201804120937431_Initial.resx">
-      <DependentUpon>201804120937431_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804191232391_Initial.resx">
+      <DependentUpon>201804191232391_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

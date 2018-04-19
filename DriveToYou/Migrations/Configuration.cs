@@ -1,4 +1,4 @@
-namespace DriveToYou.Migrations
+Ôªønamespace DriveToYou.Migrations
 {
     using DriveToYou.Models;
     using Newtonsoft.Json;
@@ -24,9 +24,9 @@ namespace DriveToYou.Migrations
 
 
 
-            //var trackToSaveOne = new Track() { Source_address = "Sikorskiego 37, Wo≥omin", Destination_address = "PoznaÒ", Date = new DateTime(2007, 3, 18), Price = 54 };
+            //var trackToSaveOne = new Track() { Source_address = "Sikorskiego 37, Wo¬≥omin", Destination_address = "Pozna√±", Date = new DateTime(2007, 3, 18), Price = 54 };
             var trackToSaveTwo = new Track() { Source_address = "Warszawa", Destination_address = "Gdynia", Date = new DateTime(2015, 3, 18), Price = 99, Distance = 444 };
-           var trackToSaveThree = new Track() { Source_address = "Katowice", Destination_address = "£Ûdü", Date = new DateTime(2016, 3, 18), Price = 524, Distance = 444.4 };
+           var trackToSaveThree = new Track() { Source_address = "Katowice", Destination_address = "≈Å√≥d≈∫", Date = new DateTime(2016, 3, 18), Price = 524, Distance = 444.4 };
             //var trackToSaveFourth = new Track() { Source_address = "Zakopane", Destination_address = "Szczecin", Date = new DateTime(2018, 3, 18), Price = 154};
 
             //context.Tracks.Add(trackToSaveOne);           

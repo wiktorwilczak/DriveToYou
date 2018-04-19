@@ -34,7 +34,7 @@ namespace DriveToYou.Services
             dynamic stuff = JsonConvert.DeserializeObject(response.Content);
             string diststring = stuff.rows[0].elements[0].distance.text;
 
-            var distance = double.Parse(diststring.Replace("km", "").Replace(" ", "").Replace(".", ","));
+            var distance = double.Parse(diststring.Replace("km", "").Replace(" ", ""));
          
 
             track.Distance = distance;
@@ -73,10 +73,10 @@ namespace DriveToYou.Services
             return result;
         }
 
-        public List<MonthlyReportDTO> GetMonthlyReport()
+        public List<MonthlyReportDTO> GetMonthlyReport(int monthNumber)
         {          
 
-            var query = _db.Tracks.Where(o => o.Date.Month == DateTime.Now.Month && o.Date.Year == DateTime.Now.Year)
+            var query = _db.Tracks.Where(o => o.Date.Month == monthNumber && o.Date.Year == DateTime.Now.Year)
                .ToList();        
 
             var dataDTO = Mapper.Map<List<MonthlyReportDTO>>(query);
@@ -96,8 +96,10 @@ namespace DriveToYou.Services
                 var AveragePrice = groupedList[i].Average(o => o.AveragePrice);
                 var AverageDistance = groupedList[i].Average(o => o.AverageDistance);
                 var Date = groupedList[i][0].Date;
-            
+                var DrivesCount = groupedList[i].Count;
 
+                tempList.DrivesCount = DrivesCount;
+                tempList.ShortDate = Date.Day;
                 tempList.Date = Date;
                 tempList.TotalDailyDistance = TotalDailyDistance;
                 tempList.AveragePrice = AveragePrice;
