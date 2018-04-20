@@ -17,6 +17,8 @@ namespace DriveToYou.Migrations
                         Price = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Date = c.DateTime(nullable: false),
                         Distance = c.Double(nullable: false),
+                        EstimatedTime = c.String(),
+                        EstimatedFuelCost = c.Double(nullable: false),
                     })
                 .PrimaryKey(t => t.ID);
             

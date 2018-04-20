@@ -21,8 +21,6 @@
 	</div>
 
 
- <!-- <input  type="text" name="date" ng-model="monthNumber" >     -->    
-
 		<form ng-submit="monthly()">
 		<input type="submit" class="btn btn-primary" value="Check">
 		  <table class="table" ng-show="monthlylist">
@@ -38,9 +36,9 @@
 			<tbody>
 			  <tr ng-repeat="o in monthlylist">
 				<td> {{o.ShortDate}}</td>
-				<td>{{o.TotalDailyDistance}}</td>
-				<td> {{o.AverageDistance}}</td>
-				 <td> {{o.AveragePrice}}</td>
+				<td>{{o.TotalDailyDistance}}km</td>
+				<td> {{o.AverageDistance}}km</td>
+				 <td> {{o.AveragePrice}}zł</td>
 				 <td>{{o.DrivesCount}}</td>
 			  </tr>
 			</tbody>
@@ -68,8 +66,8 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td> {{total.TotalDistance}}</td>
-					<td>{{total.TotalPrice}}</td>
+					<td> {{total.TotalDistance}}km</td>
+					<td>{{total.TotalPrice}}zł</td>
 					<td> {{total.DrivesCount}}</td>
 				</tr>
 			</tbody>

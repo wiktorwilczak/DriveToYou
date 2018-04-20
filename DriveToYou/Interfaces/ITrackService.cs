@@ -11,7 +11,9 @@ namespace DriveToYou.Interfaces
     public interface ITrackService
     {
         void AddTrack(Track track);
+        TrackReport GetTrackReport(string Source_address, string Destination_address);
         DailyReportDTO GetDailyReport(DateTime startdate, DateTime enddate);
         List<MonthlyReportDTO> GetMonthlyReport(int monthNumber);
+        
     }
 }

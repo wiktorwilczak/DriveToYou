@@ -2,15 +2,13 @@ angular.module('DriveToYou')
 
 	.config(function($routeProvider) {
 		$routeProvider
-			.when('/monthly', {
-				templateUrl: 'monthly/monthly.html',
+			.when('/raports', {
+				templateUrl: 'raports/raports.html',
 				controller: 'importController'
 			})
 	})
 	
 	.controller('importController', function($scope, $http) {
-
-
 
 
 

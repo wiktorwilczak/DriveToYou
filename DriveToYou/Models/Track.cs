@@ -16,5 +16,7 @@ namespace DriveToYou.Models
         public decimal Price { get; set; }
         public DateTime Date { get; set; }
         public double Distance { get; set; }
+        public string EstimatedTime { get; set; }
+        public double EstimatedFuelCost { get; set; }
     }
 }

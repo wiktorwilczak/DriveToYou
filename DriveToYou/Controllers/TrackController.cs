@@ -33,7 +33,18 @@ namespace DriveToYou.Controllers
         {
           
             _trackService.AddTrack(track);
+
+          
         }
+
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.Route("reports/trackraport/{Source_address}/{Destination_address}")]
+        public IHttpActionResult GetTrackRaport(string Source_address, string Destination_address)
+        {
+            return Ok(_trackService.GetTrackReport(Source_address, Destination_address));
+
+        }
+
 
 
         [System.Web.Http.HttpGet]

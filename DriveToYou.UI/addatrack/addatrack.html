@@ -2,22 +2,7 @@
     <div>
         <h2>Add a new track:</h2>
 
-        <!-- <form name="trackForm" method="POST" ng-submit="submitForm()">    
-          <input type="text" name="Source_address" placeholder="Source Adress" ng-model="track.Source_address" required>
-          <br>
-          <input type="text" name="Destination_address" ng-model="track.Destination_address" placeholder="Destination Adress" required>
-          <br>
-          <input type="text" name="Price" ng-model="track.Price" placeholder="Price" required>
-          <br>
-          <input type="date" name="Date" ng-model="track.Date" required>
-          <br>
-          <div class="form-group">
-            <input type="submit" value="Save" class="btn btn-inverse btn-primary" />
-            <input type="button" value="Reset" class="btn btn-info" 
-                   ng-disabled="trackForm.$pristine" ng-click="reset()" />
-          </div>
-          <br>
-        </form> -->
+      
       </div>
       <form name="trackForm" novalidate role="form" ng-submit="trackForm.$valid && submitForm()">
         <div class="form-group">
@@ -44,10 +29,14 @@
             <div ng-show="trackForm.tDate.$error.required">Tell me Date.</div>
           </div>
         </div>
+      
 
           <div class="form-group">
-            <input type="submit" value="Save" class="btn btn-inverse btn-primary" />
+            <input type="submit" value="Add" class="btn btn-inverse btn-primary" />
             <input type="button" value="Reset" class="btn btn-info" 
                ng-disabled="trackForm.$pristine" ng-click="reset()" />
           </div>
+        </form>
+
+        
     

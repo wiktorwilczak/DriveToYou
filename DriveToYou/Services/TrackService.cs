@@ -33,14 +33,20 @@ namespace DriveToYou.Services
 
             dynamic stuff = JsonConvert.DeserializeObject(response.Content);
             string diststring = stuff.rows[0].elements[0].distance.text;
+            string EstimatedTime = stuff.rows[0].elements[0].duration.text;
+            
 
             var distance = double.Parse(diststring.Replace("km", "").Replace(" ", ""));
-         
+            var EstimatedFuelCost = distance * 0.6;
 
+            track.EstimatedTime = EstimatedTime;
+            track.EstimatedFuelCost = EstimatedFuelCost;
             track.Distance = distance;
             _db.Tracks.Add(track);
             _db.SaveChanges();
+
         }
+
 
      
 
@@ -113,7 +119,29 @@ namespace DriveToYou.Services
 
         }
 
+        public TrackReport GetTrackReport(string Source_address, string Destination_address)
+        {
+            var client = new RestClient("https://maps.googleapis.com/maps/api/distancematrix/json");
+            var request = new RestRequest(Method.GET);
+            request.AddParameter("origins", Source_address);
+            request.AddParameter("destinations", Destination_address);
+            request.AddParameter("key", "AIzaSyA1RgvPAeRDK2rcaU0lDts9UUhbFB2y-xY");
+            IRestResponse response = client.Execute(request);
 
 
+            dynamic stuff = JsonConvert.DeserializeObject(response.Content);
+            string diststring = stuff.rows[0].elements[0].distance.text;
+            string EstimatedTime = stuff.rows[0].elements[0].duration.text;
+
+
+            var distance = double.Parse(diststring.Replace("km", "").Replace(" ", ""));
+            var EstimatedFuelCost = distance * 0.6;
+            var trackReport = new TrackReport();
+            trackReport.EstimatedTime = EstimatedTime;
+            trackReport.EstimatedFuelCost = EstimatedFuelCost;
+            trackReport.Distance = distance;
+            return trackReport;
+
+        }
     }
 }

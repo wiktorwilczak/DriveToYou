@@ -13,7 +13,7 @@ namespace DriveToYou.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201804191232391_Initial"; }
+            get { return "201804191549139_Initial"; }
         }
         
         string IMigrationMetadata.Source

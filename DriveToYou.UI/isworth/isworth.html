@@ -1,0 +1,50 @@
+
+<div class="container">
+
+<h2>Here you can check how much will you spent on fuel, what is estimated time travel and how long will you drive.</h2>
+
+
+
+<form name="tracksmallForm" novalidate role="form" ng-submit="tracksmallForm.$valid && trackRaport()">
+        <div class="form-group">
+          <input type="text" ng-model="track.Source_address" required="" name="tSource" placeholder="Source Address" class="form-control"  />
+          <div ng-show="tracksmallForm.$submitted || form.tSource.$touched">
+            <div ng-show="tracksmallForm.tSource.$error.required">Tell me Source Address.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="text" ng-model="track.Destination_address" required="" name="tDestination" placeholder="Destination Address" class="form-control" />
+          <div ng-show="tracksmallForm.$submitted || form.tDestination.$touched">
+            <div ng-show="tracksmallForm.tDestination.$error.required">Tell me Destination Address.</div>
+          </div>
+        </div>
+
+
+          <div class="form-group">
+            <input type="submit" value="Check" class="btn btn-inverse btn-primary" />
+            <input type="button" value="Reset" class="btn btn-info" 
+               ng-disabled="tracksmallForm.$pristine" ng-click="reset()" />
+          </div>
+</form>
+
+
+<div>
+        <table class="table table-dark" ng-show="raport">
+            <thead>
+              <tr>                     
+                <th scope="col">Distance</th>
+                <th scope="col">Estimated drive Time</th>
+                <th scope="col">Estimated Fuel Cost</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>                     
+                <td>{{raport.Distance}}km</td>
+                <td>{{raport.EstimatedTime}}</td>
+                <td>{{raport.EstimatedFuelCost}}zł</td>
+              </tr>                
+            </tbody>
+          </table>        
+  </div>
+</div>
