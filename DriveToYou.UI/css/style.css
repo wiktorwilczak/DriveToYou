@@ -1,4 +1,25 @@
 body {
   padding-top: 70px;
+  background-image: url("../image/bg.jpg");
+  background-repeat: no-repeat;
+
 }
+.container {
+  color: whitesmoke;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 15px;
+}
+
+.check{
+  color: black;
+}
+
+
+.navbar .navbar-collapse {
+
+  font-size: 130%;
+}
+
+
+   
 

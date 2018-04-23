@@ -4,11 +4,11 @@ angular.module('DriveToYou')
 		$routeProvider
 			.when('/raports', {
 				templateUrl: 'raports/raports.html',
-				controller: 'importController'
+				controller: 'raportController'
 			})
 	})
 	
-	.controller('importController', function($scope, $http) {
+	.controller('raportController', function($scope, $http) {
 
 
 

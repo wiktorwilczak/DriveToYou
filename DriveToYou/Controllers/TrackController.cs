@@ -63,6 +63,13 @@ namespace DriveToYou.Controllers
 
         }
 
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.Route("reports/upcomingtracks")]
+        public IHttpActionResult UpcomingTracks()
+        {
+            return Ok(_trackService.UpcomingTracks());
+
+        }
 
     }
 }

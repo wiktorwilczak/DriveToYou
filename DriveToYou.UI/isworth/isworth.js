@@ -15,7 +15,6 @@ angular.module('DriveToYou')
                 $http.get("http://localhost:50445/transits/reports/trackraport/" + $scope.track.Source_address +"/" +$scope.track.Destination_address)
                     .then(onCompleteRaport)
 
-                    $scope.reset();
             };
     
             function onCompleteRaport(response) {

@@ -143,5 +143,23 @@ namespace DriveToYou.Services
             return trackReport;
 
         }
+
+        public List<Track> UpcomingTracks()
+        {
+            var query = from days in _db.Tracks
+                        where (days.Date >= DateTime.Now)
+                        select days;
+
+
+            var querylist = new List<Track>();
+            foreach (var item in query)
+            {
+
+                querylist.Add(item);
+
+            }
+
+            return querylist;
+        }
     }
 }

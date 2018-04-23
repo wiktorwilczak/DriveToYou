@@ -1,5 +1,4 @@
-var app = angular.module('DriveToYou', ['ngRoute']);
-
+var app = angular.module('DriveToYou', ['ngRoute'])
 
 app.config(function($routeProvider) {
 	$routeProvider
@@ -8,4 +7,6 @@ app.config(function($routeProvider) {
 			controller: 'homeController'
 		});
 });
+
+
 
