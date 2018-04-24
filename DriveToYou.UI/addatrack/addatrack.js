@@ -8,11 +8,11 @@ angular.module('DriveToYou')
 			})
 	})
 	
-	.controller('addatrackController', function($scope, $http) {
+	.controller('addatrackController', function($scope, $http, baseUrlService) {
   
   
 		$scope.submitForm = function() {
-		  $http.post("http://localhost:50445/transits/addtrack", $scope.track)
+		  $http.post(baseUrlService.baseUrl() +"transits/addtrack", $scope.track)
 		  alert('send to server: ' + " Destination Address: " +$scope.track.Destination_address
 								   + ", Source Address: " +$scope.track.Source_address)
 	  				  

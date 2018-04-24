@@ -8,7 +8,7 @@ angular.module('DriveToYou')
 			})
 	})
 	
-	.controller('raportController', function($scope, $http) {
+	.controller('raportController', function($scope, $http, baseUrlService) {
 
 
 
@@ -25,7 +25,7 @@ angular.module('DriveToYou')
 		
 
 		$scope.monthly = function(monthNumber){
-				  $http.get("http://localhost:50445/transits/reports/monthly/" +$scope.monthNumber)
+				  $http.get(baseUrlService.baseUrl() +"transits/reports/monthly/" +$scope.monthNumber)
 				  .then(onCompleteMonthly);
 				};
 
@@ -34,7 +34,7 @@ angular.module('DriveToYou')
 						};
 
 		$scope.earning = function(startdate, enddate){
-					$http.get("http://localhost:50445/transits/reports/daily/" +$("#from").val() +"/" +$("#to").val())
+					$http.get(baseUrlService.baseUrl() +"transits/reports/daily/" +$("#from").val() +"/" +$("#to").val())
 					.then(onCompleteEarning);
 				};
 				

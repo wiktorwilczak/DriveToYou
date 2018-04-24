@@ -8,11 +8,11 @@ angular.module('DriveToYou')
 			})
     })
     
-    .controller('isworthController', function($scope, $http) {
+    .controller('isworthController', function($scope, $http, baseUrlService) {
 
 
         $scope.trackRaport = function(){
-                $http.get("http://localhost:50445/transits/reports/trackraport/" + $scope.track.Source_address +"/" +$scope.track.Destination_address)
+                $http.get(baseUrlService.baseUrl() +"transits/reports/trackraport/" + $scope.track.Source_address +"/" +$scope.track.Destination_address)
                     .then(onCompleteRaport)
 
             };
