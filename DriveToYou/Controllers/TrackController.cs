@@ -46,7 +46,6 @@ namespace DriveToYou.Controllers
         }
 
 
-
         [System.Web.Http.HttpGet]
         [System.Web.Http.Route("reports/daily/{startdate}/{enddate}")]
         public IHttpActionResult GetDailyReport(DateTime startdate, DateTime enddate)
