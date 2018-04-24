@@ -1,0 +1,27 @@
+  <div class="container">    
+      <table class="table">  
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Source Address</th>
+            <th>Destination Address</th>
+            <th>Price</th>
+            <th>Distance</th>
+            <th>Estimated Time</th>
+            <th>Estimated Fuel Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="o in upcomingtracksList">
+             <td>{{o.Date}}</td>
+             <td> {{o.Source_address}}</td>
+             <td>{{o.Destination_address}}</td>
+             <td> {{o.Price}}zł</td>
+             <td> {{o.Distance}}km</td>
+             <td>{{o.EstimatedTime}}</td>
+             <td>{{o.EstimatedFuelCost}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
